@@ -16,3 +16,8 @@ export interface UserData {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface UserWithTokenData {
+  userId: UserIdData;
+  token: string;
+}

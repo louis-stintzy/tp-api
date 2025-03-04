@@ -23,7 +23,15 @@ CREATE USER tp WITH PASSWORD 'tp';
 CREATE DATABASE tp OWNER tp;
 ```
 
-### Tester la connexion à la base de donéne et synchroniser la base de données
+### Configuration des variables d'environnement
+
+```sh
+CORS_ORIGIN='*'
+PORT=3200
+PG_URL='postgres://tp:tp@localhost/tp'
+```
+
+### Tester la connexion à la base de données et synchroniser la base de données
 
 Voir Readme dans le dossier database
 
