@@ -8,7 +8,7 @@ router.post('/register', (req: Request, res: Response) => {
   res.send('register route');
 });
 router.post('/login', (req: Request, res: Response) => {
-  console.log('register route');
+  console.log('login route');
   res.send('login route');
 });
 
