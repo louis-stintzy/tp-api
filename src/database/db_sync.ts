@@ -1,6 +1,6 @@
 import connect from './db_connect';
 
-import { User } from '../models';
+import { User, Movie } from '../models';
 
 const sequelize = connect();
 
@@ -11,6 +11,9 @@ async function syncModels() {
 
     await User.sync({ force: false }); // note that force: true will drop the table if it already exists
     console.log('User model synchronized.');
+
+    await Movie.sync({ force: false });
+    console.log('Movie model synchronized.');
 
     console.log('All models were synchronized successfully.');
   } catch (error) {

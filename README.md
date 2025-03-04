@@ -34,7 +34,7 @@ JWT_SECRET='ceciestunsecret'
 
 ### 5️⃣ Tester la connexion à la base de données et synchroniser la base de données
 
-Voir Readme dans le dossier database
+Voir Readme dans le dossier `/src/database` ou en cliquant [ICI](https://github.com/louis-stintzy/tp-api/blob/main/src/database/README.md)
 
 ### 6️⃣ Démarrer le serveur
 
@@ -44,6 +44,20 @@ npm run dev
 
 ## 🏁 Routes disponibles
 
+### Auth Routes
+
 POST /auth/register : Inscription d’un utilisateur
 
 POST /auth/login : Connexion avec retour d’un JWT
+
+### Movies Routes
+
+GET /movies : Récupérer tous les films
+
+GET /movies/:id : Récupérer un film par ID
+
+POST /movies : Ajouter un film (protégé par authentification) // validation token à venir
+
+PUT /movies/:id : Modifier un film (protégé par authentification) // validation token à venir
+
+DELETE /movies/:id : Supprimer un film (protégé par authentification) // validation token à venir
