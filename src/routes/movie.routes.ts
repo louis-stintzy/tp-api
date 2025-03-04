@@ -7,6 +7,7 @@ import {
   getMovieById,
   updateMovie,
 } from '../controllers/movie.controller';
+import { upload } from '../middlewares/upload';
 
 const router = Router();
 
@@ -15,8 +16,8 @@ router.get('/', getAllMovies);
 router.get('/:id', getMovieById);
 
 // Routes protégées, l'utilisateur doit être authentifié
-router.post('/', checkAuth, addMovie);
-router.put('/:id', checkAuth, updateMovie);
+router.post('/', checkAuth, upload.single('image'), addMovie);
+router.put('/:id', checkAuth, upload.single('image'), updateMovie);
 router.delete('/:id', checkAuth, deleteMovie);
 
 export default router;
