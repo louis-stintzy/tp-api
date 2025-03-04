@@ -56,8 +56,8 @@ GET /movies : Récupérer tous les films
 
 GET /movies/:id : Récupérer un film par ID
 
-POST /movies : Ajouter un film (protégé par authentification) // validation token à venir
+POST /movies : Ajouter un film (protégé par authentification)
 
-PUT /movies/:id : Modifier un film (protégé par authentification) // validation token à venir
+PUT /movies/:id : Modifier un film (protégé par authentification)
 
-DELETE /movies/:id : Supprimer un film (protégé par authentification) // validation token à venir
+DELETE /movies/:id : Supprimer un film (protégé par authentification)

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-
+import { checkAuth } from '../middlewares/checkAuth';
 import {
   addMovie,
   deleteMovie,
@@ -10,14 +10,13 @@ import {
 
 const router = Router();
 
+// Routes publiques
 router.get('/', getAllMovies);
-
 router.get('/:id', getMovieById);
 
-router.post('/', addMovie);
-
-router.put('/:id', updateMovie);
-
-router.delete('/:id', deleteMovie);
+// Routes protégées, l'utilisateur doit être authentifié
+router.post('/', checkAuth, addMovie);
+router.put('/:id', checkAuth, updateMovie);
+router.delete('/:id', checkAuth, deleteMovie);
 
 export default router;
