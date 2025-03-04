@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+import router from './routes';
 import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -11,8 +12,19 @@ app.use(
     credentials: true, // allow session cookie from browser to pass through
   })
 );
-app.get('/', (req: Request, res: Response) => {
-  res.send('Welcome to the "TP - Développement d\'une API REST" !');
+
+// Analyser les requêtes entrantes avec des données JSON (remplace body-parser)
+app.use(express.json());
+
+// Permettre l'utilisation de la methode POST
+app.use(express.urlencoded({ extended: true }));
+
+// Routes '/api', router
+app.use('/', router);
+
+// Gestion des erreurs 404
+app.use((req: Request, res: Response) => {
+  res.status(404).send('Not Found');
 });
 app.listen(port, () => {
   console.log(`Server listening on ${port}`);
