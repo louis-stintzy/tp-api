@@ -29,6 +29,7 @@ CREATE DATABASE tp OWNER tp;
 CORS_ORIGIN='*'
 PORT=3200
 PG_URL='postgres://tp:tp@localhost/tp'
+JWT_SECRET='ceciestunsecret'
 ```
 
 ### Tester la connexion à la base de données et synchroniser la base de données
@@ -41,6 +42,7 @@ Voir Readme dans le dossier database
 npm run dev
 ```
 
-## Route disponible
+## Routes disponibles
 
 POST /auth/register : Inscription d’un utilisateur
+POST /auth/login : Connexion avec retour d’un JWT
