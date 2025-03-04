@@ -3,7 +3,7 @@ import { register, login } from '../controllers/auth.controller';
 import {
   checkLoginForm,
   checkRegistrationForm,
-} from '../middlewares/checkRegistrationForm';
+} from '../middlewares/checkAuthForms';
 
 const router = Router();
 
