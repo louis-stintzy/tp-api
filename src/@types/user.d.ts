@@ -13,7 +13,6 @@ export type UserIdData = number;
 export interface UserData {
   id: UserIdData;
   email: string;
-  password: string;
   createdAt: Date;
   updatedAt: Date;
 }
